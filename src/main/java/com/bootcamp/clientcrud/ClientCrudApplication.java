@@ -2,12 +2,14 @@ package com.bootcamp.clientcrud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-public class ClientcrudApplication {
+@EnableJpaRepositories
+public class ClientCrudApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ClientcrudApplication.class, args);
+		SpringApplication.run(ClientCrudApplication.class, args);
 	}
 
 }
