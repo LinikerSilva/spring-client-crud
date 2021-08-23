@@ -3,10 +3,11 @@ package com.bootcamp.clientcrud.service;
 import com.bootcamp.clientcrud.dto.ClientDTO;
 import com.bootcamp.clientcrud.entities.Client;
 import com.bootcamp.clientcrud.repositories.ClientRepository;
-import com.bootcamp.clientcrud.resources.exceptions.ResourceNotFoundException;
-import com.bootcamp.clientcrud.service.exceptions.EntityNotFoundException;
+import com.bootcamp.clientcrud.service.exceptions.ResourceNotFoundException;
 
 import java.util.Optional;
+
+import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -31,7 +32,7 @@ public class ClientService {
   @Transactional(readOnly=true)
   public ClientDTO findById(Long id) {
     Optional<Client> obj = repository.findById(id);
-    Client entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not found"));
+    Client entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
     return new ClientDTO(entity);
   }
 

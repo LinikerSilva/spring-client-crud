@@ -1,4 +1,4 @@
-package com.bootcamp.clientcrud.resources.exceptions;
+package com.bootcamp.clientcrud.service.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
   private static final long serialVersionUID = 1L;
